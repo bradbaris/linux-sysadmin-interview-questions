@@ -462,7 +462,7 @@ A collection of linux sysadmin/devops interview questions. Feel free to contribu
 * A careless sysadmin executes the following command: ```chmod 444 /bin/chmod ``` - what do you do to fix this?
   - **Perl: `perl -e 'chmod 0755, "/bin/chmod"'`**
   - **Python3: `python -c 'import os;os.chmod("/bin/chmod", 0o755)'`**
-  - **Ruby: `ruby -r fileutils -e 'FileUtils.chmod 0755, "/bin/chmod"`**
+  - **Ruby: `ruby -r fileutils -e 'FileUtils.chmod 0755, "/bin/chmod"'`**
   - **GNU install:**
   ```
     sudo install -m 0755 /bin/chmod /bin/chmod.fix  
