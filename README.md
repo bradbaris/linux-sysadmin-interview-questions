@@ -23,7 +23,7 @@ A collection of linux sysadmin/devops interview questions. Feel free to contribu
   1. [Other Great References](#references)
 
 
-#### [[⬆]](#toc) <a name='contributors'>Contributors:</a>
+#### [⬆](#toc) <a name='contributors'>Contributors:</a>
 
 * [moregeek](https://github.com/moregeek)
 * [typhonius](https://github.com/typhonius)
@@ -37,7 +37,7 @@ A collection of linux sysadmin/devops interview questions. Feel free to contribu
 * Ben
 
 
-#### [[⬆]](#toc) <a name='general'>General Questions:</a>
+#### [⬆](#toc) <a name='general'>General Questions:</a>
 
 * What did you learn yesterday/this week?
   - **[...]**
@@ -70,7 +70,7 @@ A collection of linux sysadmin/devops interview questions. Feel free to contribu
 * Describe the general file system hierarchy of a Linux system.
   - **The file system in Linux begins with the root directory `/`, from which all files and folders stem from. Other partitions and resources can be mounted as a volume onto this rooted tree. Also somewhat related: in Linux, "everything is a file", so everything from processes, files, directories, sockets, pipes, et cetera can be accessed like a file (or more accurately, they are represented by a file descriptor abstracted over the virtual filesystem layer in the kernel).**
 
-#### [[⬆]](#toc) <a name='simple'>Simple Linux Questions:</a>
+#### [⬆](#toc) <a name='simple'>Simple Linux Questions:</a>
 
 * What is the name and the UID of the administrator user?
   - **The `root` user, with an UID of 0.**
@@ -125,7 +125,7 @@ A collection of linux sysadmin/devops interview questions. Feel free to contribu
 * Can you name a lower-case letter that is not a valid option for GNU ```ls```?
   - **`-y`**
 
-#### [[⬆]](#toc) <a name='medium'>Medium Linux Questions:</a>
+#### [⬆](#toc) <a name='medium'>Medium Linux Questions:</a>
 
 * What do the following commands do and how would you use them?
   * ```tee```
@@ -322,12 +322,12 @@ A collection of linux sysadmin/devops interview questions. Feel free to contribu
   - **`cgroups` are used to implement hierarchy and organization amongst processes and resources. They are prominent in orchestration and virtualization tools such as Docker and LXC.**
 
 
-#### [[⬆]](#toc) <a name='expert'>Expert Linux Questions:</a>
+#### [⬆](#toc) <a name='expert'>Expert Linux Questions:</a>
 
 * A running process gets ```EAGAIN: Resource temporarily unavailable``` on reading a socket. How can you close this bad socket/file descriptor without killing the process?
   - **`netstat` or `lsof | grep <process_name>` to find the process ID (PID) and file descriptor (FD). Then, `gdb -p <PID>` will attach the PID and you can close the socket with `call close(<FD>)` then `quit` to exit.**
 
-#### [[⬆]](#toc) <a name='network'>Networking Questions:</a>
+#### [⬆](#toc) <a name='network'>Networking Questions:</a>
 
 * What is localhost and why would ```ping localhost``` fail?
   - **Localhost refers to the computer you are on. `ping localhost` may fail if `/etc/hosts` does not have a `127.0.0.1 localhost` record, or if `/etc/nsswitch.conf` permissions are not set to `644` and `/etc/nsswitch.conf` does not have an entry like `hosts:   files dns`, or if the local loopback interface is not running (verify with `ifconfig`)**
@@ -380,7 +380,7 @@ A collection of linux sysadmin/devops interview questions. Feel free to contribu
   - **An April Fools' joke (1990) known as 'IP over Avian Carriers' (IPoAC). It proposed communicating internet traffic via homing pigeons.**
 
 
-#### [[⬆]](#toc) <a name='mysql'>MySQL questions:</a>
+#### [⬆](#toc) <a name='mysql'>MySQL questions:</a>
 
 * How do you create a user?
   - **`CREATE USER '<username>'@'<hostname>' IDENTIFIED BY '<password>';`**
@@ -416,7 +416,7 @@ A collection of linux sysadmin/devops interview questions. Feel free to contribu
 * How do you check which jobs are running?
   - **`SHOW FULL PROCESSLIST;`**
 
-####[[⬆]](#toc) <a name='devop'>DevOps Questions:</a>
+#### [⬆](#toc) <a name='devop'>DevOps Questions:</a>
 
 * Can you describe your workflow when you create a script?
   - **Analyze task requirements.**
@@ -457,7 +457,7 @@ A collection of linux sysadmin/devops interview questions. Feel free to contribu
   - **DevOps aims to facilitate the process of provisioning infrastructure and environments and applications, combining 'development' with 'operations'. It is compatible with, supports and encompasses continuous delivery.**
 * What are the important aspects of a system of continuous integration and deployment?
   - **Rampant automation in everything, granular unit tests, frequent integration tests, automated builds, code quality control, highly accessible by all, agile.**
-####[[⬆]](#toc) <a name='fun'>Fun Questions:</a>
+#### [⬆](#toc) <a name='fun'>Fun Questions:</a>
 
 * A careless sysadmin executes the following command: ```chmod 444 /bin/chmod ``` - what do you do to fix this?
   - **Perl: `perl -e 'chmod 0755, "/bin/chmod"'`**
@@ -489,7 +489,7 @@ A collection of linux sysadmin/devops interview questions. Feel free to contribu
 * What will happen on 19 January 2038?
   - **The Year 2038 Problem. It specifically affects software using a signed 32-bit integer system. This 32-bit integer is interpreted as the number of seconds since `00:00:00 UTC 1 January 1970` (the Unix epoch), and will overflow on `03:14:07 UTC 19 January 2038`, finally reaching the maximum value of 2147483647.**
 
-#### [[⬆]](#toc) <a name='demo'>Demo Time:</a>
+#### [⬆](#toc) <a name='demo'>Demo Time:</a>
 
 * Unpack test.tar.gz without man pages or google.
   - **`tar -xzf test.tar.gz`**
@@ -526,7 +526,7 @@ A collection of linux sysadmin/devops interview questions. Feel free to contribu
 * In a log file with contents as ```<TIME> : [MESSAGE] : [ERROR_NO] - Human readable text``` display summary/count of specific error numbers that occurred every hour or a specific hour.
   - **`cat log | awk -F ":" '{print $3}'|sort -n |uniq -c`**
 
-#### [[⬆]](#toc) <a name='references'>Other Great References:</a>
+#### [⬆](#toc) <a name='references'>Other Great References:</a>
 
 Some questions are 'borrowed' from other great references like:
 
